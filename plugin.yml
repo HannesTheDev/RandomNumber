@@ -1,0 +1,11 @@
+name: RandomNumber
+main: HannesTheDev\RandomNumber
+version: 1.0.0
+api: 3.0.0
+author: HannesTheDev
+
+commands:
+  randomnumber:
+    permission: randomnumber.randomnumber.cmd
+    description: "Generate a random number"
+    aliases: ["randomn", "rnumber", "rn"]
