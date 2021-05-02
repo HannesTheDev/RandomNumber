@@ -15,7 +15,6 @@ class Main extends PluginBase
 
     public function onLoad()
     {
-        $this->saveDefaultConfig();
         $this->saveResource("config.yml");
         $config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
         $this->min = $config->get("min");
