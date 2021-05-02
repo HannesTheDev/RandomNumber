@@ -14,12 +14,10 @@ class Main extends PluginBase
     public $max;
 
 
-    public function onEnable()
+    public function onLoad()
     {
-        foreach (['config.yml'] as $ressources) {
-            $this->saveResource($ressources);
-        }
-        $config = new Config($this->getDataFolder() . 'config.yml');
+        $this->saveDefaultConfig();
+        $config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
         $this->min = $config->get("min");
         $this->max = $config->get("max");
     }
