@@ -9,7 +9,6 @@ use pocketmine\utils\Config;
 
 class Main extends PluginBase
 {
-    public $number;
     public $min;
     public $max;
 
