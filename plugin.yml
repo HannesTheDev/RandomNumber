@@ -1,5 +1,5 @@
 name: RandomNumber
-main: HannesTheDev\RandomNumber
+main: HannesTheDev\RandomNumber\Main
 version: 1.0.0
 api: 3.0.0
 author: HannesTheDev
