@@ -21,15 +21,23 @@ class Main extends PluginBase
         $this->max = $config->get("max");
     }
 
-    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool
+    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
     {
         switch ($cmd->getName()) {
             case "randomnumber":
                 if ($sender->hasPermission("randomnumber.randomnumber.cmd")) {
-                    if (!empty($this->things)) {
-                        $random = rand($this->min, $this->max);
-                        $sender->sendMessage("§3Your random number is: §e" . $random);
+                    if (!empty($this->min) && !empty($this->max)) {
+                        if ($this->max > $this->min) {
+                            $random = rand($this->min, $this->max);
+                            $sender->sendMessage("§3Your random number is: §e" . $random);
+                        } else {
+                            $sender->sendMessage("§cThe min amount must not be smaller than the max amount");
+                        }
+                    } else {
+                        $sender->sendMessage("§cPlease fill in the min and max amounts!");
                     }
+                } else {
+                    $sender->sendMessage("§cYou don't have permission to use this command!");
                 }
                 break;
         }
